@@ -2,7 +2,13 @@ const pug = require('pug');
 var PugInterface = function(){
 
 }
-PugInterface.prototype.test1 = function (data,states) {
-	console.log(data,states);
+PugInterface.prototype.entrieslist = function (entriesList) {
+	return entriesList
 };
+PugInterface.prototype.entryDetail = function(entry){
+	return entry
+}
+PugInterface.prototype.welcomePage = function(){
+	return {message:'hooray! welcome to our api!'}
+}
 exports.PugInterface = PugInterface

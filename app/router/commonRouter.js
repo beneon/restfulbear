@@ -8,9 +8,8 @@ var RouterFactory = function(modelInterface,viewInterface){
 	next()
 	})
 	router.get('/',function(req,res){
-	res.json({message:'hooray! welcome to our api!'})
+		res.send(viewInterface.welcomePage())
 	})
-
 	router.route('/entries')
 		.post(function(req,res){
 			var entry = new modelInterface()
@@ -27,8 +26,7 @@ var RouterFactory = function(modelInterface,viewInterface){
 		.get((req,res)=>{
 			modelInterface.find((eFind,entries)=>{
 				if(eFind)res.send(eFind)
-				res.json(entries)
-				viewInterface.test1(entries,200)
+				res.send(viewInterface.entrieslist(entries))
 			})
 		})
 	router.route('/entries/query')
@@ -38,16 +36,17 @@ var RouterFactory = function(modelInterface,viewInterface){
 				var val = req.query[key]
 				req.query[key]=new RegExp(val)
 			}
+			console.log(req.query);
 			modelInterface.find(req.query,(eFind,entries)=>{
 				if(eFind)res.send(eFind)
-				res.json(entries)
+				res.send(viewInterface.entrieslist(entries))
 			})
 		})
 	router.route('/entry/:entry_id')
 		.get((req,res)=>{
 			modelInterface.findById(req.params.entry_id,(e,entry)=>{
 				if(e)res.send(e)
-				res.json(entry)
+				res.send(viewInterface.entryDetail(entry))
 			})
 		})
 		.put((req,res)=>{
