@@ -5,5 +5,13 @@ html(lang='zh-cn')
     title
   body
     table
-      thead
-        tr
+      if hasHeader
+        thead
+          tr
+            each cell in header
+              th= cell
+      tbody
+        each row in data
+          tr
+            each cell in row
+              td= cell
