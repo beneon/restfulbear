@@ -1,10 +1,30 @@
 {
-  "name": "node-api",
+  "name": "restfulbear",
   "main": "server.js",
   "dependencies": {
-    "body-parser": "~1.0.1",
-    "express": "~4.0.0",
-    "mongoose": "~3.6.13",
+    "body-parser": "^1.18.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.5",
+    "mongoose": "^4.11.13",
     "pug": "^2.0.0-rc.4"
-  }
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "description": "> 名字是从这个教程来的： [build a restful api using node and express 4](http://scotch.io/tutorials/build-a-restful-api-using-node-and-express-4)",
+  "version": "0.0.1",
+  "directories": {
+    "test": "test"
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/beneon/restfulbear.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/beneon/restfulbear/issues"
+  },
+  "homepage": "https://github.com/beneon/restfulbear#readme"
 }
